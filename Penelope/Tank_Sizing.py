@@ -1,7 +1,7 @@
 import pandas as pd
 import math
 
-file_path = '/Users/glyts/Documents/GitHub/Illuminator/Penelope/Household_Consumption.csv'
+file_path = '/Users/glyts/Documents/GitHub/Illuminator/Penelope/CSV/Household_Consumption.csv'
 data = pd.read_csv(file_path)
 
 # Basic Constants
@@ -60,7 +60,7 @@ def calculate_hydrogen_storage_capacity(data):
     # Rounded Volume of Hydrogen Tank   
     rounded_volume_liters = math.ceil(volume_with_safety_margin_liters / 1000) * 1000
 
-    return volume_with_safety_margin_liters, hydrogen_mass_required_kg, rounded_volume_liters
+    return volume_with_safety_margin_liters, hydrogen_mass_required_kg, rounded_volume_liters, hydrogen_mass_required_kg
 
 
 # Function 2: Simple Cost Calculation
@@ -83,13 +83,16 @@ def calculate_total_system_cost(volume_liters, hydrogen_mass_required_kg):
     return total_system_cost
 
 # Calculate required hydrogen storage capacity and hydrogen mass
-required_volume_liters, required_hydrogen_mass_kg, rounded_liters = calculate_hydrogen_storage_capacity(data)
+required_volume_liters, required_hydrogen_mass_kg, rounded_liters, required_hydrogen_mass_kg = calculate_hydrogen_storage_capacity(data)
 
 # Calculate total system cost
 total_system_cost = calculate_total_system_cost(required_volume_liters, required_hydrogen_mass_kg)
 
 # Print the System Efficiency
 print(f"\nTotal P2G2P System Efficiency: {TOTAL_EFFICIENCY1*100:.2f}%\n")
+
+# Print Required Hydrogen Capacity (KG)
+print(f"Required KG of H2 (10% safety margin): {required_hydrogen_mass_kg:.2f} KG\n")
 
 # Print Required Hydrogen Capacity
 print(f"Required hydrogen storage capacity with 10% safety margin: {required_volume_liters:.2f} liters\n")

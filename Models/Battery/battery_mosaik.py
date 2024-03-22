@@ -1,4 +1,5 @@
 # only can build one battery model
+import pandas as pd
 import mosaik.scheduler
 import mosaik_api
 try:
@@ -7,7 +8,6 @@ except ModuleNotFoundError:
     import battery_model as batterymodelset
 else:
     import Models.Battery.battery_model as batterymodelset
-import pandas as pd
 
 #todo: convert this battery model simAPI to a controller api. This becomes a mosaik API to start the battery and the electrolyser.
 #      A condition checks the battery SOC and then initiates the electrolyser.
