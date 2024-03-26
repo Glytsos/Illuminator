@@ -4,9 +4,9 @@ from itertools import combinations
 from math import factorial
 
 # Define the total shared capacity (X) in units of your choice (e.g., kWh for energy)
-total_shared_capacity = 2562.5  # Example value, easily modifiable
+total_shared_capacity = 18000  # Example value, easily modifiable
 
-file_path = '/Users/glyts/Documents/GitHub/Illuminator/Penelope/CESI.csv'
+file_path = '/Users/glyts/Documents/GitHub/Illuminator/Penelope/CSV/CESI.csv'
 df = pd.read_csv(file_path)
 
 # Adjusted weights for the CESI components

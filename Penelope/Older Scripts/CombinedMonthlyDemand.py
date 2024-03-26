@@ -1,5 +1,6 @@
 # Data extracted from the document for the months October to March for both 2022 and 2023 across four countries.
 # Each entry is [month, year2022, year2023]
+# This has been used in the report to showcase some of the extrapolated data.
 
 data = {
     "Spain": {

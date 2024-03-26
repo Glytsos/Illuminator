@@ -23,7 +23,7 @@ def plot_data(data, months, plot_title, output_file, colors):
     plt.figure(figsize=(10, 6))
 
     for i, (label, df) in enumerate(data.items()):
-        monthly_data = df.resample('ME').mean()
+        monthly_data = df.resample('M').mean()
         monthly_data = monthly_data[monthly_data.index.month.isin(months)]
         monthly_data = monthly_data.sort_index()
         plt.bar(indices + i * bar_width, monthly_data['Load'], label=label, width=bar_width, color=colors[i % len(colors)])
